@@ -65,7 +65,7 @@ public class T07_LockSupport_WithoutSleep {
 		}, "t1");
 
 		t2 = new Thread(() -> {
-			//System.out.println("t2Æô¶¯");
+			System.out.println("t2Æô¶¯");
 			//if (c.size() != 5) {
 
 				LockSupport.park();
@@ -79,10 +79,6 @@ public class T07_LockSupport_WithoutSleep {
 
 		t2.start();
 		t1.start();
-
-
-
-
 
 	}
 }

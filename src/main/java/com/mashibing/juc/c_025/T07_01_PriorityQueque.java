@@ -10,11 +10,17 @@ public class T07_01_PriorityQueque {
         q.add("e");
         q.add("a");
         q.add("d");
-        q.add("z");
+        q.add("b");
 
         for (int i = 0; i < 5; i++) {
             System.out.println(q.poll());
         }
+
+        // q.size() , poll 之后会变
+//        for (int i = 0; i < q.size(); i++) {
+//            System.out.println(q.poll());
+//        }
+
 
     }
 }

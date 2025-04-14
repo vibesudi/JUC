@@ -5,7 +5,8 @@ import java.util.concurrent.LinkedTransferQueue;
 public class T09_TransferQueue {
 	public static void main(String[] args) throws InterruptedException {
 		LinkedTransferQueue<String> strs = new LinkedTransferQueue<>();
-		
+
+		// 先启动消费者进程
 		new Thread(() -> {
 			try {
 				System.out.println(strs.take());
@@ -19,13 +20,15 @@ public class T09_TransferQueue {
 		//strs.put("aaa");
 
 
-		/*new Thread(() -> {
+		new Thread(() -> {
 			try {
 				System.out.println(strs.take());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}).start();*/
+		}).start();
+
+		strs.transfer("bbb");
 
 
 	}

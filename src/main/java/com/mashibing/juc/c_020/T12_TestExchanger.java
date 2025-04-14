@@ -30,6 +30,28 @@ public class T12_TestExchanger {
 
         }, "t2").start();
 
+        new Thread(()->{
+            String s = "T3";
+            try {
+                s = exchanger.exchange(s);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread().getName() + " " + s);
+
+        }, "t3").start();
+
+//        new Thread(()->{
+//            String s = "T4";
+//            try {
+//                s = exchanger.exchange(s);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            System.out.println(Thread.currentThread().getName() + " " + s);
+//
+//        }, "t4").start();
+
 
     }
 }

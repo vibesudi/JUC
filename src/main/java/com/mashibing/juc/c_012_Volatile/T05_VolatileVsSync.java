@@ -9,9 +9,9 @@ import java.util.List;
 
 
 public class T05_VolatileVsSync {
-	/*volatile*/ int count = 0;
+	volatile int count = 0;
 
-	synchronized void m() { 
+	/*synchronized*/ void m() {
 		for (int i = 0; i < 10000; i++)
 			count++;
 	}
@@ -21,7 +21,7 @@ public class T05_VolatileVsSync {
 
 		List<Thread> threads = new ArrayList<Thread>();
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 100; i++) {
 			threads.add(new Thread(t::m, "thread-" + i));
 		}
 
